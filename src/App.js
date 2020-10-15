@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux'
+import { getData } from './actions'
 
-function App() {
+function App(props) {
+
+    useEffect(() => {
+        getData()
+    }, [])
     return (
         <div className="App">
-            App
+            { props.isFetching ? "Loading" : props.error ? "Error" : "App"}
         </div>
     );
 }
 
-export default App;
+const mapStateToProps = state => {
+    return {
+        "isFetching": state.isFetching,
+        "error": state.error
+    }
+}
+
+export default connect(mapStateToProps, { getData })(App);
