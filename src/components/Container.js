@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
-import { getData } from './actions'
-import Container from './components/Container'
+import { getData } from '../actions'
+import Card from './Card'
 
 const Container = ({ data, getData, isFetching, error }) => {
     useEffect(() => {
         getData()
     }, [])
+
     return (
-        <div>
-            { isFetching ? "Loading" : error ? "Error" : "App"}
+        <div className="Container">
+            { isFetching ? "Loading" : error ? "Error" : data.map(dog => (
+                <Card key={dog.id} dog={dog} />
+            ))}
         </div>
     )
 }

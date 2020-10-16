@@ -8,7 +8,7 @@ export const getData = () => dispatch => {
     dispatch({ type: GET_DATA })
     axios.get("https://dog.ceo/api/breeds/image/random/10")
         .then(res => {
-            console.log(res)
+            // console.log(res)
             dispatch({ type: GET_SUCCESS, payload: res.data.message })
         })
         .catch(err => {

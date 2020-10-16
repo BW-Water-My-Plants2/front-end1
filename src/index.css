@@ -15,3 +15,22 @@ code {
 * {
     text-align: center;
 }
+
+.Container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    background: black;
+    margin: 10px;
+    color: white;
+}
+
+.Card {
+    width: 20%;
+}
+
+.Card, img {
+    width: 200px;
+    height: 200px;
+    margin: 5%;
+}
