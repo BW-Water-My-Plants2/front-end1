@@ -5,10 +5,10 @@ import App from './App';
 
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
-import reducer from './reducers'
+import { root } from './reducers'
 import thunk from 'redux-thunk'
 
-const store = createStore(reducer, applyMiddleware(thunk))
+const store = createStore(root, applyMiddleware(thunk))
 
 ReactDOM.render(
     <React.StrictMode>
