@@ -1,36 +1,110 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-* {
-    text-align: center;
+.title {
+  margin: 6px 20px 6px;
+  font-size: 3rem;
+  text-decoration: none;
+  color: rgb(15, 199, 97);
 }
 
-.Container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    background: black;
-    margin: 10px;
-    color: white;
+.title:hover {
+  color: darkgreen;
 }
 
-.Card {
-    width: 20%;
+/* RL Header for nav */
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+/* RL Nav Links style */
+.nav-links {
+  display: flex;
+  width: 40%;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 3rem;
+}
+/* Rl Nav Links style */
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background: rgb(15, 199, 97);
+  padding: 10px;
+  margin: 0;
+}
+/* Rl Nav Links style */
+.nav-link:hover {
+  text-decoration: underline;
+  background: darkgreen;
+  color: white;
 }
 
-.Card, img {
-    width: 200px;
-    height: 200px;
-    margin: 5%;
+/* FORM STYLING FOR SIGNUP */
+
+.signup-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.signup-container {
+  border-radius: 10px;
+  width: 40%;
+  margin: 0 auto;
+  background: linear-gradient(
+    90deg,
+    rgb(39, 176, 255) 0%,
+    rgb(0, 232, 236) 100%
+  );
+  height: 50vh;
+  padding: 20px;
+}
+
+form {
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: black;
+  height: 45vh;
+}
+
+.form-input-btn {
+  width: 50%;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    rgb(39, 143, 255) 0%,
+    rgb(12, 99, 250) 100%
+  );
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  margin: 30px auto 0;
+
+  display: block;
+}
+
+.form-input-btn:hover {
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgb(39, 176, 255) 0%,
+    rgb(0, 232, 236) 100%
+  );
+  transition: all 0.4s ease-out;
 }
