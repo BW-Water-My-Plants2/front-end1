@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import NavigationBar from "./components/NavigationBar.js";
 import { Route, Link, Switch } from "react-router-dom";
+import PrivateRoute from './utils/PrivateRoute'
 import Signup from "./components/Signup.js";
 import Login from "./components/Login.js";
-import Dashboard from './components/Userdashboard'
+import Dashboard from './components/PlantContainer'
+import PlantForm from './components/PlantForm'
 import "./app.css";
 import "./index.css";
 
@@ -20,22 +22,15 @@ function App() {
                 <Route path="/signup">
                     <Signup />
                 </Route>
+
+                <PrivateRoute path="/dashboard">
+                    <Dashboard />
+                </PrivateRoute>
+
+                <PrivateRoute path="/plant-form">
+                    <PlantForm />
+                </PrivateRoute>
             </Switch>
-
-            <Route path="/dashboard">
-                <Dashboard />
-            </Route>
-
-            {/* {user.email != "" ? (
-            <div className="welcome"> 
-            <h2>
-                welcome,<span>{user.name}</span>
-            </h2>
-            <button>LogOut</button>
-            </div>
-        ) : (
-        
-        )} */}
         </div>
     );
 }

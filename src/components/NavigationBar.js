@@ -26,11 +26,11 @@ const NavigationBar = () => {
                     Login
         </Link>
 
-                <Link className="nav-link" to="/plant-list">
+                <Link className="nav-link" to="/dashboard">
                     Plant List
         </Link>
 
-                <Link className="nav-link" to="/add-plant">
+                <Link className="nav-link" to="/plant-form">
                     Add Your Plant
         </Link>
 

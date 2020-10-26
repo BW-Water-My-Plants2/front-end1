@@ -3,7 +3,6 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 const Login = (props) => {
-
     const [login, setLogin] = useState({ username: "", password: "" });
 
     const { push } = useHistory();
@@ -24,9 +23,10 @@ const Login = (props) => {
             .post("https://water-myplants.herokuapp.com/api/auth/login", login)
             .then((res) => {
                 console.log(res, "res inside handleSubmit signup form");
+                window.localStorage.setItem("token", res.data.token)
             })
             .catch((err) => {
-                console.log(err, "error in signing up form ");
+                // console.log(err, "error in signing up form ");
             });
     };
 
@@ -36,7 +36,7 @@ const Login = (props) => {
             <div className="signup-container">
                 <form onSubmit={handleSubmit}>
                     Username:
-          <div className="form-inputs">
+                <div className="form-inputs">
                         <input
                             type="text"
                             name="username"
@@ -45,8 +45,8 @@ const Login = (props) => {
                             onChange={handleChanges}
                         />
                     </div>
-          Password:
-          <div className="form-inputs">
+                Password:
+                <div className="form-inputs">
                         <input
                             type="text"
                             name="password"
@@ -57,11 +57,11 @@ const Login = (props) => {
                     </div>
                     <button className="form-input-btn" type="submit">
                         Login
-          </button>
+                </button>
                 </form>
             </div>
         </>
     );
 };
 
-export default Login;
+export default Login 

@@ -108,3 +108,8 @@ form {
   );
   transition: all 0.4s ease-out;
 }
+
+.Card {
+    width: 30%;
+    margin: 2% auto;
+}
